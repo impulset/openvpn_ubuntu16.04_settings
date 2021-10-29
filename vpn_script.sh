@@ -1,5 +1,5 @@
 sudo apt-get update
-sudo apt-get install openvpn easy-rsa
+sudo apt-get install openvpn easy-rsa -y
 make-cadir ~/openvpn-ca
 cd ~/openvpn-ca
 
