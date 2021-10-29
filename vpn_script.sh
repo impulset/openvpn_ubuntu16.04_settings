@@ -44,7 +44,6 @@ sudo sysctl -p
 sudo cp server.conf /etc/openvpn/server.conf
 
 sudo systemctl start openvpn@server
-sudo systemctl status openvpn@server
 sudo systemctl enable openvpn@server
 
 mkdir -p ~/client-configs/files
