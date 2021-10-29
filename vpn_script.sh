@@ -1,3 +1,7 @@
+#apt install sudo -y && apt install zip -y
+
+location=$(pwd)
+
 sudo apt-get update
 sudo apt-get install openvpn easy-rsa -y
 make-cadir ~/openvpn-ca
@@ -24,14 +28,16 @@ source vars
 cd ~/openvpn-ca/keys
 sudo cp ca.crt server.crt server.key ta.key dh2048.pem /etc/openvpn
 
+sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+
+cd $location
+
+sudo cp rc.local /etc/rc.local
+
+sudo chmod 755 /etc/rc.local
+
 cp server.conf /etc/openvpn/server.conf
 
 cp sysctl.conf /etc/sysctl.conf
 
 sudo sysctl -p
-
-sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-
-sudo cp rc.local /etc/rc.local
-
-sudo chmod 755 /etc/rc.local
