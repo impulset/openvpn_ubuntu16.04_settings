@@ -25,3 +25,7 @@ cd ~/openvpn-ca/keys
 sudo cp ca.crt server.crt server.key ta.key dh2048.pem /etc/openvpn
 
 cp server.conf /etc/openvpn/server.conf
+
+cp sysctl.conf /etc/sysctl.conf
+
+sudo sysctl -p
