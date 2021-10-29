@@ -32,6 +32,7 @@ cd ~/openvpn-ca/keys
 sudo cp ca.crt server.crt server.key ta.key dh2048.pem /etc/openvpn
 
 sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+sudo iptables --policy INPUT DROP
 
 cd $location
 
