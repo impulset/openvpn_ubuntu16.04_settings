@@ -53,6 +53,7 @@ chmod 700 ~/client-configs/files
 
 cp base.conf ~/client-configs/base.conf
 
+cp make_config.sh ~/client-configs/make_config.sh
 chmod 700 ~/client-configs/make_config.sh
 
 cd ~/client-configs
