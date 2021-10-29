@@ -38,10 +38,10 @@ cd $location
 sudo cp rc.local /etc/rc.local
 sudo chmod 755 /etc/rc.local
 
-cp sysctl.conf /etc/sysctl.conf
+sudo cp sysctl.conf /etc/sysctl.conf
 sudo sysctl -p
 
-cp server.conf /etc/openvpn/server.conf
+sudo cp server.conf /etc/openvpn/server.conf
 
 sudo systemctl start openvpn@server
 sudo systemctl status openvpn@server
