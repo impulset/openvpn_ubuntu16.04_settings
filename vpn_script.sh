@@ -1,4 +1,5 @@
-#apt install sudo -y && apt install zip -y && apt install wget -y
+#docker run --name ubu161 -dit --cap-add=NET_ADMIN ubuntu:16.04
+#apt install sudo -y && apt install zip -y && apt install wget -y && apt install iptables
 
 location=$(pwd)
 
@@ -41,3 +42,12 @@ cp server.conf /etc/openvpn/server.conf
 cp sysctl.conf /etc/sysctl.conf
 
 sudo sysctl -p
+
+cp base.conf ~/client-configs/base.conf
+
+nano ~/client-configs/make_config.sh
+
+chmod 700 ~/client-configs/make_config.sh
+
+cd ~/client-configs
+./make_config.sh client1
