@@ -34,19 +34,15 @@ sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 cd $location
 
 sudo cp rc.local /etc/rc.local
-
 sudo chmod 755 /etc/rc.local
 
 cp server.conf /etc/openvpn/server.conf
-
-cp sysctl.conf /etc/sysctl.conf
-
-sudo sysctl -p
-
 cp base.conf ~/client-configs/base.conf
 
-nano ~/client-configs/make_config.sh
+cp sysctl.conf /etc/sysctl.conf
+sudo sysctl -p
 
+nano ~/client-configs/make_config.sh
 chmod 700 ~/client-configs/make_config.sh
 
 cd ~/client-configs
