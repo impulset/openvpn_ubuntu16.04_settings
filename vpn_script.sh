@@ -1,4 +1,4 @@
-#apt install sudo -y && apt install zip -y
+#apt install sudo -y && apt install zip -y && apt install wget -y
 
 location=$(pwd)
 
