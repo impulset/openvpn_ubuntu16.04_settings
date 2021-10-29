@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #docker run --name ubu161 -dit --cap-add=NET_ADMIN ubuntu:16.04
 #apt install sudo -y && apt install zip -y && apt install wget -y && apt install iptables
 
