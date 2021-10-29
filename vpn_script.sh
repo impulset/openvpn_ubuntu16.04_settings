@@ -36,13 +36,21 @@ cd $location
 sudo cp rc.local /etc/rc.local
 sudo chmod 755 /etc/rc.local
 
-cp server.conf /etc/openvpn/server.conf
-cp base.conf ~/client-configs/base.conf
-
 cp sysctl.conf /etc/sysctl.conf
 sudo sysctl -p
 
-nano ~/client-configs/make_config.sh
+cp server.conf /etc/openvpn/server.conf
+
+
+#sudo systemctl start openvpn@server
+#sudo systemctl status openvpn@server
+#sudo systemctl enable openvpn@server
+
+mkdir -p ~/client-configs/files
+chmod 700 ~/client-configs/files
+
+cp base.conf ~/client-configs/base.conf
+
 chmod 700 ~/client-configs/make_config.sh
 
 cd ~/client-configs
