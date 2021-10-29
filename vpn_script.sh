@@ -29,3 +29,9 @@ cp server.conf /etc/openvpn/server.conf
 cp sysctl.conf /etc/sysctl.conf
 
 sudo sysctl -p
+
+sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+
+sudo cp rc.local /etc/rc.local
+
+sudo chmod 755 /etc/rc.local
